@@ -14,7 +14,6 @@ class shoplist_base(tornado.web.RequestHandler):
     def initialize(self, db_inst):
         self.db_inst = db_inst
         self.shoplist_inst = ShoppingList(self.db_inst)
-        self.set_header('Server', 'me-contrata-ai')
 
 
 class shoplist_home(shoplist_base):
