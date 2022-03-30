@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap 101 Template</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Customd styles for this template -->
+        <link href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+        	/*
+        	 * Base structure
+        	 */
+
+        	/* Move down content because we have a fixed navbar that is 50px tall */
+        	body {
+        	  padding-top: 50px;
+        	}
+
+
+        	/*
+        	 * Global add-ons
+        	 */
+
+        	.sub-header {
+        	  padding-bottom: 10px;
+        	  border-bottom: 1px solid #eee;
+        	}
+
+        	/*
+        	 * Top navigation
+        	 * Hide default border to remove 1px line.
+        	 */
+        	.navbar-fixed-top {
+        	  border: 0;
+        	}
+
+        	/*
+        	 * Sidebar
+        	 */
+
+        	/* Hide for mobile, show later */
+        	.sidebar {
+        	  display: none;
+        	}
+        	@media (min-width: 768px) {
+        	  .sidebar {
+        	    position: fixed;
+        	    top: 51px;
+        	    bottom: 0;
+        	    left: 0;
+        	    z-index: 1000;
+        	    display: block;
+        	    padding: 20px;
+        	    overflow-x: hidden;
+        	    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        	    background-color: #f5f5f5;
+        	    border-right: 1px solid #eee;
+        	  }
+        	}
+
+        	/* Sidebar navigation */
+        	.nav-sidebar {
+        	  margin-right: -21px; /* 20px padding + 1px border */
+        	  margin-bottom: 20px;
+        	  margin-left: -20px;
+        	}
+        	.nav-sidebar > li > a {
+        	  padding-right: 20px;
+        	  padding-left: 20px;
+        	}
+        	.nav-sidebar > .active > a,
+        	.nav-sidebar > .active > a:hover,
+        	.nav-sidebar > .active > a:focus {
+        	  color: #fff;
+        	  background-color: #428bca;
+        	}
+
+
+        	/*
+        	 * Main content
+        	 */
+
+        	.main {
+        	  padding: 20px;
+        	}
+        	@media (min-width: 768px) {
+        	  .main {
+        	    padding-right: 40px;
+        	    padding-left: 40px;
+        	  }
+        	}
+        	.main .page-header {
+        	  margin-top: 0;
+        	}
+
+
+        	/*
+        	 * Placeholder dashboard ideas
+        	 */
+
+        	.placeholders {
+        	  margin-bottom: 30px;
+        	  text-align: center;
+        	}
+        	.placeholders h4 {
+        	  margin-bottom: 0;
+        	}
+        	.placeholder {
+        	  margin-bottom: 20px;
+        	}
+        	.placeholder img {
+        	  display: inline-block;
+        	  border-radius: 50%;
+        	}
+
+        	.padding-left-10 {
+        		padding-left: 10px;
+        	}
+
+        	.padding-right-10{
+        		padding-right: 10px
+        	}
+
+
+        	tr.strikeout td:before {
+        	    content: " ";
+        	    position: absolute;
+        	    top: 50%;
+        	    left: 0;
+        	    border-bottom: 1px solid #111;
+        	    width: 100%;
+        	}
+        </style>
+    </head>
+
+  <body>
+  	
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+     	<div class="container-fluid">
+	        <div class="navbar-header">
+	         	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+	          	</button>
+	          	<a class="navbar-brand" href="#">Shopping List</a>
+	        </div>
+      	</div>
+    </nav>
+
+    <div class="container-fluid">
+     	<div class="row">
+            <div class="col-sm-3 col-md-2 sidebar">
+            	<ul class="nav nav-sidebar">
+    	            <li class="active"><a href="#">Nova Lista <span class="sr-only">(current)</span></a></li>
+    	            <!-- <li><a href="#">Todas as Listas</a></li> -->
+              	</ul>
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+              	<h1 class="page-header">Lista de Compras</h1>
+              	<h2 class="sub-header">Produtos</h2>
+    	        <a class="btn btn-lg btn-primary" href="#" role="button" id="btn_add" name="btn_add">Adicionar Produto</a>
+                <a class="btn btn-lg btn-success" href="#" role="button" id="btn_new" name="btn_new">Nova Lista</a>
+                <div class="table-responsive">
+            		<table class="table table-striped" id="tb_produtos">
+              			<thead>
+    		                <tr>
+                                <th>Produto</th>
+                                <th>Quantidade</th>
+                                <th>Valor Unidade</th>
+                                <th>Valor Total</th>
+    		                </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                          	<tr>
+                          		<td colspan="3"><span id="total_itens"><strong>Total Itens</strong>: 0</span></td>
+                          		<td><span id="total_value"><strong>Total Valor</strong>: 0.00</span></td>
+                          	</tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODALS -->
+
+    <!-- ADICIONAR PRODUTO -->
+
+    <div id="modal_products_add" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Adicionar Produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="tx_produto" class="form-label">Produto</label>
+                            <input type="text" role="presentation" autocomplete="off" class="form-control" id="tx_produto_add" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="quantidade" class="form-label">Quantidade</label>
+                            <input type="number" role="presentation" autocomplete="off" class="form-control" id="quantidade_add" placeholder="" value="0" required="">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="valor" class="form-label">Valor</label>
+                            <input type="number" role="presentation" autocomplete="off" class="form-control" id="valor_add" placeholder="" value="0" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn_add_unit">Adicionar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM MODAL ADICIONAR PRODUTO -->
+    <!-- EDITAR PRODUTO -->
+
+    <div id="modal_products_edit" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label for="tx_produto" class="form-label">Produto</label>
+                            <input type="text" role="presentation" autocomplete="off" class="form-control" id="tx_produto_edit" placeholder="" value="" required="">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="quantidade" class="form-label">Quantidade</label>
+                            <input type="number" role="presentation" autocomplete="off" class="form-control" id="quantidade_edit" placeholder="" value="0" required="">
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="valor" class="form-label">Valor</label>
+                            <input type="number" role="presentation" autocomplete="off" class="form-control" id="valor_edit" placeholder="" value="0" required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn_save_unit">Salvar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIM MODAL EDITAR PRODUTO -->
+    <!-- REMOVER PRODUTO -->
+    <div id="modal_products_remove" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Remover Produto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="message_remove_product"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btn_remove">Sim, remover</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIM MODAL REMOVER PRODUTO -->
+
+
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/main-functions.js"></script>
+    <script>
+        var id_load_list = {{ id_load }};
+        $(document).ready(function(){
+            var data_list = ajax_me(`/api/list/${id_load_list}`);
+            if(data_list.responseJSON.status === true){
+                for(var product_item_index=0;product_item_index<data_list.responseJSON.data.length;product_item_index++){
+                    var product_item_row = data_list.responseJSON.data[product_item_index];
+                    add_product_to_list(product_item_row.title, product_item_row.quantity, product_item_row.value, product_item_row.id);
+                }
+            }
+        });
+  </script>
+</html>
